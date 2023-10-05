@@ -1,0 +1,48 @@
+<Meta name="testGrid">
+  <messagelist>
+    <message status="normal" label="build" groupid="100006">
+      <User scope="testGrid" name="Main" status="normal" link="193064076" /><![CDATA[Generating network and source code 'D:\DZ\11sem\AI_Enregy\KP\pythonProject\PSCAD_files\testGrid.gf42\Main.f'.]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100006"><![CDATA[Generating 'D:\DZ\11sem\AI_Enregy\KP\pythonProject\PSCAD_files\testGrid.gf42\testGrid.map'.]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100014"><![CDATA[The total number of live nodes: 27]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="400000"><![CDATA[Time for Compile: 78ms  Make: 0ms]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100015"><![CDATA[Will execute (1): call C:\Program Files (x86)\GFortran\4.2.1\bin\gf42vars.bat]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100015"><![CDATA[Will execute (1): call "C:\Program Files (x86)\GFortran\4.2.1\bin\gf42vars.bat"]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100015"><![CDATA[Will execute (2): make -f testGrid.mak]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100015"><![CDATA[Will execute (2): "D:\DZ\11sem\AI_Enregy\KP\pythonProject\PSCAD_files\testGrid.gf42\testGrid.mak.bat"]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100005"><![CDATA[Creating EMTDC executable...]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="0"><![CDATA[D:\DZ\11sem\AI_Enregy\KP\pythonProject\PSCAD_files\testGrid.gf42>call "C:\Program Files (x86)\GFortran\4.2.1\bin\gf42vars.bat" ]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100004"><![CDATA[Compiling 'Main.f' into object code.]]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="100012"><![CDATA[Linking objects and libraries into binary 'testGrid.exe']]></message>
+    <message status="normal" label="build" scope="testGrid" groupid="400000"><![CDATA[Solve Time = 31ms]]></message>
+  </messagelist>
+  <List classid="Settings" />
+  <ViewContext>
+    <Window defn="testGrid:Main" call="0" />
+  </ViewContext>
+  <Catalog count="0" />
+  <List classid="View">
+    <View name="Main" zoomlevel="6" scrollx="0" scrolly="0" />
+    <View name="W11" zoomlevel="6" scrollx="0" scrolly="0" />
+    <View name="W2_1" zoomlevel="6" scrollx="0" scrolly="0" />
+  </List>
+  <Output device="EMTDC" version="2010" date="2023/10/05" time="18:48:24.000000">
+    <Domain name="Time" unit="s" mult="0.0" skew="0.0">
+      <Sample rate="4000.0" end="20000" />
+    </Domain>
+    <List classid="Analog">
+      <Analog name="Main(0):U5" index="0" id="1707322921:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):U4" index="3" id="2144164238:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):U3" index="6" id="1156822284:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):U2" index="9" id="45070243:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):U1" index="12" id="1667709105:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):U0" index="15" id="1122298258:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):I5" index="18" id="515047773:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):I4" index="21" id="340692934:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):I3" index="24" id="830433709:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):I2" index="27" id="1060829460:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):I1" index="30" id="205060717:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+      <Analog name="Main(0):I0" index="33" id="1701789850:0" label="" dim="3" unit="" min="-2.0" max="2.0" />
+    </List>
+    <List classid="Digital" />
+  </Output>
+</Meta>

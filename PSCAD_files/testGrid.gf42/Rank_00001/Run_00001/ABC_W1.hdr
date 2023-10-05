@@ -1,0 +1,10 @@
+PSCAD/EMTDC Simulation
+
+Date of simulation (Month/Day/Year): 10/ 5/2023
+Time of simulation (Hour:Min:Sec)  : 18:48:25
+Length of the simulation data      :  1.8 Second
+
+Data recorded after filtering through a 3rd order
+Butterworth low-pass filer with the cut-off 
+frequency of     50. Hz.
+
