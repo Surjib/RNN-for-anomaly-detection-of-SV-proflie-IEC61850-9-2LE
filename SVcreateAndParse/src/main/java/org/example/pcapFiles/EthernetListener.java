@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Slf4j
 public class EthernetListener {
@@ -19,6 +21,10 @@ public class EthernetListener {
     private String nickName;
     @Getter @Setter
     private ArrayList<String> nicArray = new ArrayList<>();
+    @Getter @Setter
+    private ArrayList<String> nicMAC = new ArrayList<>();
+    @Getter @Setter
+    private ArrayList<String> nicIP = new ArrayList<>();
     @Getter @Setter
     private PcapHandle handle;
 
@@ -31,12 +37,32 @@ public class EthernetListener {
     public void checkNic(){
         try {
             for (PcapNetworkInterface nic : Pcaps.findAllDevs()) {
+//                System.out.println(nic.getAddresses());
+//                System.out.println(nic.getLinkLayerAddresses());
+                nicMAC.add(String.valueOf(nic.getLinkLayerAddresses().get(0)));
                 nicArray.add(nic.getDescription());
+                nicIP.add(parseIP(String.valueOf(nic.getAddresses())));
             }
+//            System.out.println("NIC written down");
         } catch (PcapNativeException e) {
             throw new RuntimeException(e);
         }
     }
+
+    public String parseIP(String ipString){
+        String IPADDRESS_PATTERN =
+                "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)";
+
+        Pattern pattern = Pattern.compile(IPADDRESS_PATTERN);
+        Matcher matcher = pattern.matcher(ipString);
+        if (matcher.find()) {
+           return matcher.group();
+        }
+        else{
+           return "0.0.0.0";
+        }
+    }
+
     @SneakyThrows
     public void start(){
         if (nickName != null && !nickName.isEmpty()){
