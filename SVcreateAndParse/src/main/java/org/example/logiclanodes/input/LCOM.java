@@ -43,14 +43,17 @@ public class LCOM extends LN {
     public void process() {
         if(dataIterator.hasNext()) {
             String[] line = dataIterator.next().split(",");
+            long t = Long.parseLong(line[1].trim());
 
             for (int i = 0; i < analogNumber; i++) {
                 double value = Double.parseDouble(line[i + 2]);
                 value *= aCoefList.get(i);
                 value += bCoefList.get(i);
 
-                OUT.get(i).getInstMag().getF().setValue(Double.valueOf((int) (value * 100000))); //возможно 1000 чтобы результат был в А и В
+                OUT.get(i).getT().setValue(t);
+                OUT.get(i).getInstMag().getF().setValue(Double.valueOf((int) (value * 1000))); //возможно 1000 чтобы результат был в А и В
             }
+
 //            System.out.println(OUT.get(3).getInstMag().getF().getValue());
         }
     }

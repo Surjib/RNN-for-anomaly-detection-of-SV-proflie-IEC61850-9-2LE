@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
+import org.example.logiclanodes.common.LN;
 import org.pcap4j.core.*;
 
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Slf4j
-public class EthernetListener {
+public class EthernetListener extends LN {
 
 
     @Getter @Setter
@@ -27,6 +28,7 @@ public class EthernetListener {
     private ArrayList<String> nicIP = new ArrayList<>();
     @Getter @Setter
     private PcapHandle handle;
+
 
     final List <PacketListener> listeners = new CopyOnWriteArrayList<>();
 
@@ -43,7 +45,7 @@ public class EthernetListener {
                 nicArray.add(nic.getDescription());
                 nicIP.add(parseIP(String.valueOf(nic.getAddresses())));
             }
-//            System.out.println("NIC written down");
+            System.out.println("NIC written down");
         } catch (PcapNativeException e) {
             throw new RuntimeException(e);
         }
@@ -122,5 +124,10 @@ public class EthernetListener {
 
     public void addListener(PacketListener listener) {
         listeners.add(listener);
+    }
+
+    @Override
+    public void process() {
+        log.debug("EtListener method");
     }
 }

@@ -1,4 +1,4 @@
-package org.example.packetStructure;
+package org.example.packetStructureCapture;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -38,6 +38,7 @@ public class FileWatcher {
                     if (filename.toString().equals("ABC_W1.dat")) {
                         System.out.println("Файл был изменен: " + filename);
 
+
                     }
                 }
             }

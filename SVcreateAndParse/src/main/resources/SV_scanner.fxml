@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.075, 0.925" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720" prefWidth="1200" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.appgui.AppController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="58.0" prefWidth="1198.0">
+         <children>
+            <ComboBox fx:id="NicSelector" layoutX="14.0" layoutY="13.0" prefHeight="25.0" prefWidth="282.0" promptText="Select NIC" />
+            <Button fx:id="StartButton" layoutX="347.0" layoutY="13.0" mnemonicParsing="false" onAction="#startButton" text="Start" />
+            <Button fx:id="StopButton" layoutX="410.0" layoutY="13.0" mnemonicParsing="false" onAction="#stopButton" text="Stop" />
+         </children></AnchorPane>
+      <HBox prefHeight="370.0" prefWidth="1198.0">
+         <children>
+            <ListView fx:id="leftWindow" prefHeight="661.0" prefWidth="400.0" />
+            <TableView fx:id="centerWindow" prefHeight="661.0" prefWidth="400.0">
+               <columns>
+                  <TableColumn fx:id="packetID" prefWidth="65.0" text="ID" />
+                  <TableColumn fx:id="packetSmp" prefWidth="65.0" text="Smp Cnt" />
+                  <TableColumn fx:id="packetTime" prefWidth="256.0" text="TimeStamp" />
+               </columns></TableView>
+            <AnchorPane fx:id="rightWindow" prefHeight="200.0" prefWidth="400.0">
+               <children>
+                  <Text layoutX="14.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAC Src:" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="14.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MAC Dst:" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="14.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="APP ID:" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="14.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SV ID:" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="15.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Smp Cnt:" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Line endX="250.0" layoutX="125.0" layoutY="216.0" startX="-100.0" />
+                  <Text layoutX="15.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ia" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="14.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ib" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="15.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ic" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="15.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ua" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="15.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ub" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="15.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Uc" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Label fx:id="srcMAC" layoutX="74.0" layoutY="47.0" prefHeight="17.0" prefWidth="300.0" textAlignment="CENTER" />
+                  <Label fx:id="dstMAC" layoutX="74.0" layoutY="77.0" prefHeight="17.0" prefWidth="300.0" textAlignment="CENTER" />
+                  <Label fx:id="appID" layoutX="74.0" layoutY="107.0" prefHeight="17.0" prefWidth="300.0" textAlignment="CENTER" />
+                  <Label fx:id="svID" layoutX="74.0" layoutY="137.0" prefHeight="17.0" prefWidth="300.0" textAlignment="CENTER" />
+                  <Label fx:id="smpCnt" layoutX="74.0" layoutY="167.0" prefHeight="17.0" prefWidth="300.0" textAlignment="CENTER" />
+                  <Button fx:id="Ia" layoutX="74.0" layoutY="237.0" onAction="#openGraphsWindowIA" prefHeight="25.0" prefWidth="250.0" textAlignment="CENTER" />
+                  <Button fx:id="Ib" layoutX="74.0" layoutY="267.0" onAction="#openGraphsWindowIB" prefHeight="17.0" prefWidth="250.0" textAlignment="CENTER" />
+                  <Button fx:id="Ic" layoutX="74.0" layoutY="297.0" onAction="#openGraphsWindowIC" prefHeight="17.0" prefWidth="250.0" textAlignment="CENTER" />
+                  <Button fx:id="Ua" layoutX="74.0" layoutY="327.0" onAction="#openGraphsWindowUA" prefHeight="17.0" prefWidth="250.0" textAlignment="CENTER" />
+                  <Button fx:id="Ub" layoutX="74.0" layoutY="357.0" onAction="#openGraphsWindowUB" prefHeight="17.0" prefWidth="250.0" textAlignment="CENTER" />
+                  <Button fx:id="Uc" layoutX="74.0" layoutY="387.0" onAction="#openGraphsWindowUC" prefHeight="17.0" prefWidth="250.0" textAlignment="CENTER" />
+                  <Text layoutX="314.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="314.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="314.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="314.0" layoutY="344.0" strokeType="OUTSIDE" strokeWidth="0.0" text="В" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="314.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="В" textAlignment="CENTER" wrappingWidth="59.8046875" />
+                  <Text layoutX="314.0" layoutY="404.0" strokeType="OUTSIDE" strokeWidth="0.0" text="В" textAlignment="CENTER" wrappingWidth="59.8046875" />
+               </children></AnchorPane>
+         </children></HBox>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+         <children>
+            <Button fx:id="clearButton1" layoutX="513.0" layoutY="13.0" mnemonicParsing="false" onAction="#clearButton" prefHeight="25.0" prefWidth="172.0" text="Clear" />
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
