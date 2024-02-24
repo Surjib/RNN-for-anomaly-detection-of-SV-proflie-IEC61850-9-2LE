@@ -68,7 +68,8 @@ public class EthernetListener extends LN {
     @SneakyThrows
     public void start(){
         if (nickName != null && !nickName.isEmpty()){
-            //                initializeNetworkInterface();
+            initializeNetworkInterface();
+
                 if (handle != null) {
                     String filter = "ether proto 0x88ba";  //  proto 0x88ba = IEC SV
 

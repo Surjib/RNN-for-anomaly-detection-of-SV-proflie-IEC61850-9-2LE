@@ -51,7 +51,7 @@ public class LCOM extends LN {
                 value += bCoefList.get(i);
 
                 OUT.get(i).getT().setValue(t);
-                OUT.get(i).getInstMag().getF().setValue(Double.valueOf((int) (value * 1000))); //возможно 1000 чтобы результат был в А и В
+                OUT.get(i).getInstMag().getF().setValue(Double.valueOf((int) (value * 1000000))); //возможно 1000 чтобы результат был в А и В
             }
 
 //            System.out.println(OUT.get(3).getInstMag().getF().getValue());

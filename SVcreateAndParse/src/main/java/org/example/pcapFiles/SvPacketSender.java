@@ -72,7 +72,7 @@ public class SvPacketSender extends EthernetListener{
         Packet p = etherBuilder.build();
 
         this.getHandle().sendPacket(p);
-        log.info("Packet sent " + test);
+//        log.info("Packet sent " + test);
         test+=1;
 
         if (count <3999){
