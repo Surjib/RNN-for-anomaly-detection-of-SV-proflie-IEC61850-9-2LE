@@ -16,47 +16,9 @@ public class Test {
 
     @SneakyThrows
     public static void main(String[] args) {
+
         EthernetListener ethernetListener = new EthernetListener();
-
-        ethernetListener.checkNic();
-        ethernetListener.setNickName("VMware Virtual Ethernet Adapter for VMnet8");
-        ethernetListener.getNicArray();
-
-
-        SvParser svParser = new SvParser();
-
-        AtomicInteger curCnt = new AtomicInteger();
-
-//        HashMap<String, ArrayList<SvPacket>> sourceMap = new HashMap<>();
-
-//        ArrayList<Optional> array = new ArrayList<>();
-
-        Set<Optional> setSvPckt = new HashSet<>();
-
-        ethernetListener.addListener(packet -> {
-            Optional<SvPacket> svPacket = svParser.decode(packet);
-            int noASDU = svPacket.get().getApdu().getNoASDU();
-            for (int i = 0; i < noASDU; i++) {
-
-
-                if (svPacket.isPresent() && curCnt.get() != svPacket.get().getApdu().getSeqASDU().get(i).getSmpCnt()) {
-
-
-                    setSvPckt.add(svPacket);
-                    System.out.println(setSvPckt.size());
-
-//                    if (setSvPckt.size() >= 37000) {
-//                        System.out.println(setSvPckt);
-//                    }
-
-                    curCnt.set(svPacket.get().getApdu().getSeqASDU().get(i).getSmpCnt());  //update counter else writes packet twice
-                }
-            }
-
-        });
-
-        ethernetListener.start();
-
+        ethernetListener.process();
 
 
         LCOM lcom = new LCOM();

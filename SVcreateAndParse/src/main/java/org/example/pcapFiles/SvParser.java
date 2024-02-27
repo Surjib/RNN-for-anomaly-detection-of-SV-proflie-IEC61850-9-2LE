@@ -19,7 +19,7 @@ public class SvParser {
 
             SvPacket result = new SvPacket();
 
-            System.out.println(packet.getTimestamp());
+            System.out.println(packet.getTimestamp()); //packet capture time
 
             result.setMacDst(byteArrayToMac(data, 0));
             result.setMacSrs(byteArrayToMac(data, 6));
