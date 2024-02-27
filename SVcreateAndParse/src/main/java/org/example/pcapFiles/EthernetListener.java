@@ -177,17 +177,24 @@ public class EthernetListener extends LN {
 
 
                     svPacketMap.put(svPacketMap.size(), svPacket.get());
-                    if (svPacketMap.size() == 36000){
-                        System.out.println("DONE");
+                    mmxu.process(svPacket.get().getApdu().getSeqASDU().get(0).getDataset());
+
+                    if (svPacketMap.size() == 7200){
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                        System.out.println(String.format("Captured packets: %d", svPacketMap.size()));
                         for (int j = 0; j < svPacketMap.size(); j++) {
 
                             writer.writeNext(new String[]{
-                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIa()/1000d),
-                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIb()/1000d),
-                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIc()/1000d),
-                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUa()/1000d),
-                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUb()/1000d),
-                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUc()/1000d)
+                                    String.valueOf(mmxu.IphsA.get(j)[0]),
+                                    String.valueOf(mmxu.IphsB.get(j)[0]),
+                                    String.valueOf(mmxu.IphsC.get(j)[0]),
+                                    String.valueOf(mmxu.UphsA.get(j)[0]),
+                                    String.valueOf(mmxu.UphsB.get(j)[0]),
+                                    String.valueOf(mmxu.UphsC.get(j)[0])
                             });
                         }
                         try {
@@ -196,6 +203,26 @@ public class EthernetListener extends LN {
                             throw new RuntimeException(e);
                         }
                     }
+
+//                    if (svPacketMap.size() == 7200){
+//                        System.out.println("DONE");
+//                        for (int j = 0; j < svPacketMap.size(); j++) {
+//
+//                            writer.writeNext(new String[]{
+//                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIa()/1000d),
+//                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIb()/1000d),
+//                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIc()/1000d),
+//                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUa()/1000d),
+//                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUb()/1000d),
+//                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUc()/1000d)
+//                            });
+//                        }
+//                        try {
+//                            writer.close();
+//                        } catch (IOException e) {
+//                            throw new RuntimeException(e);
+//                        }
+//                    }
 
 
 //                    if (setSvPckt.size() >= 37000) {

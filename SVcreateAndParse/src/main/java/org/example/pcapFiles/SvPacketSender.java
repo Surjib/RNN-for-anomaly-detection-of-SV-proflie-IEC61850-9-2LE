@@ -52,7 +52,7 @@ public class SvPacketSender extends EthernetListener{
 
         APDU apdu = new APDU();
 //        PcapHandle sendHandle = .openLive(SNAPLEN, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, READ_TIMEOUT);
-        ASDU asdu = new ASDU("0000MU0101", count, compileValues());
+        ASDU asdu = new ASDU("TESTMU0101", count, compileValues());
         byte[] payload = new byte[apdu.convertToBytes().length + asdu.convertToBytes().length];
 
         System.arraycopy(apdu.convertToBytes(), 0, payload, 0, apdu.convertToBytes().length);
