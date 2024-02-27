@@ -5,13 +5,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.example.FileWatcher;
 import org.example.logiclanodes.common.LN;
+import org.example.logiclanodes.measurements.MMXU;
 import org.example.packetStructureCapture.SvPacket;
 import org.pcap4j.core.*;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -37,6 +38,9 @@ public class EthernetListener extends LN {
     private static final int BUFFER_SIZE = 1000;
     @Getter @Setter
     private static LinkedBlockingQueue<String> csvBuffer = new LinkedBlockingQueue<>(BUFFER_SIZE);
+    HashMap<Integer, SvPacket> svPacketMap = new LinkedHashMap<>();
+
+    MMXU mmxu = new MMXU();
 
 
     final List <PacketListener> listeners = new CopyOnWriteArrayList<>();
@@ -163,8 +167,6 @@ public class EthernetListener extends LN {
 
 //        ArrayList<Optional> array = new ArrayList<>();
 
-//        Set<Optional> setSvPckt = new HashSet<>();
-
         this.addListener(packet -> {
             Optional<SvPacket> svPacket = svParser.decode(packet);
             int noASDU = svPacket.get().getApdu().getNoASDU();
@@ -174,16 +176,27 @@ public class EthernetListener extends LN {
                 if (svPacket.isPresent() && curCnt.get() != svPacket.get().getApdu().getSeqASDU().get(i).getSmpCnt()) {
 
 
-//                    setSvPckt.add(svPacket);
-//                    System.out.println(setSvPckt.size());
-                    writer.writeNext(new String[]{
-                            String.valueOf(svPacket.get().getApdu().getSeqASDU().get(0).getDataset().getInstIa()/1000d),
-                            String.valueOf(svPacket.get().getApdu().getSeqASDU().get(0).getDataset().getInstIb()/1000d),
-                            String.valueOf(svPacket.get().getApdu().getSeqASDU().get(0).getDataset().getInstIc()/1000d),
-                            String.valueOf(svPacket.get().getApdu().getSeqASDU().get(0).getDataset().getInstUa()/1000d),
-                            String.valueOf(svPacket.get().getApdu().getSeqASDU().get(0).getDataset().getInstUb()/1000d),
-                            String.valueOf(svPacket.get().getApdu().getSeqASDU().get(0).getDataset().getInstUc()/1000d)
-                    });
+                    svPacketMap.put(svPacketMap.size(), svPacket.get());
+                    if (svPacketMap.size() == 36000){
+                        System.out.println("DONE");
+                        for (int j = 0; j < svPacketMap.size(); j++) {
+
+                            writer.writeNext(new String[]{
+                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIa()/1000d),
+                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIb()/1000d),
+                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstIc()/1000d),
+                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUa()/1000d),
+                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUb()/1000d),
+                                    String.valueOf(svPacketMap.get(j).getApdu().getSeqASDU().get(0).getDataset().getInstUc()/1000d)
+                            });
+                        }
+                        try {
+                            writer.close();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+
 
 //                    if (setSvPckt.size() >= 37000) {
 //                        System.out.println(setSvPckt);
