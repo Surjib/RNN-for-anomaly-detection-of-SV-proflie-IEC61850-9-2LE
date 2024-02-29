@@ -3,19 +3,20 @@ package org.example;
 import lombok.SneakyThrows;
 import org.example.logiclanodes.common.LN;
 import org.example.logiclanodes.input.LCOM;
-import org.example.packetStructureCapture.SvPacket;
 import org.example.pcapFiles.EthernetListener;
 import org.example.pcapFiles.SvPacketSender;
-import org.example.pcapFiles.SvParser;
 
 import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class Test {
+public class ComtradeParser {
     private static List<LN> inList = new ArrayList<>();
 
+
     @SneakyThrows
-    public static void main(String[] args) {
+    public void CreateCSV(){
+
+
+        Thread.sleep(20000);
 
         EthernetListener ethernetListener = new EthernetListener();
         ethernetListener.process();
@@ -36,7 +37,7 @@ public class Test {
         System.out.println("Pick a Src");
         System.out.println(svPacketSender.getNicArray());
 
-        int nicSRC = 4;
+        int nicSRC = 5;
         String srcMAC = svPacketSender.getNicMAC().get(nicSRC);
         System.out.println(
                 "Source" +
@@ -49,7 +50,7 @@ public class Test {
         System.out.println("Pick a Dst");
         System.out.println(svPacketSender.getNicArray());
 
-        int nicDST = 1;
+        int nicDST = 6;
         String dstMAC = svPacketSender.getNicMAC().get(nicDST);
         System.out.println(
                 "Destination" +
@@ -70,7 +71,7 @@ public class Test {
 
 //        for (int i = 0; i < 400; i++) {
 
-        svPacketSender.process();
+//        svPacketSender.process();
 //        }
 
 
@@ -92,7 +93,6 @@ public class Test {
                 "E:\\DZ\\11sem\\AI_Enregy\\KP\\pythonProject\\PSCAD_files\\testGrid.gf42\\Rank_00001\\Run_00001\\",
                 "ABC_W1");
 
-        /** Вставить запуск EthernetListener'a */
 
         while (lcom.hasNextData()) {
             inList.forEach(LN::process);

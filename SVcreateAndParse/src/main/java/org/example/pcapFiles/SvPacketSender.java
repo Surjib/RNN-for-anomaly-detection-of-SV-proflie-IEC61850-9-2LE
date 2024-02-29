@@ -33,6 +33,7 @@ public class SvPacketSender extends EthernetListener{
     private String dstMAC;
     private short count;
 
+    String fakeMAC = "12:34:56:78:9a:bc";
     int test = 0;
 
 
@@ -63,12 +64,22 @@ public class SvPacketSender extends EthernetListener{
 
 
         EthernetPacket.Builder etherBuilder = new EthernetPacket.Builder();
-        etherBuilder
-                .srcAddr(MacAddress.getByName(srcMAC))
-                .dstAddr(MacAddress.getByName(dstMAC))
-                .type(new EtherType((short) 0x88ba, "SV_IEC61850"))
-                .payloadBuilder(svBuilder)
-                .paddingAtBuild(true);
+//        if ((count > 1500) && (count <3000)){
+//            etherBuilder
+//                    .srcAddr(MacAddress.getByName(srcMAC))
+//                    .dstAddr(MacAddress.getByName(fakeMAC))
+//                    .type(new EtherType((short) 0x88ba, "SV_IEC61850"))
+//                    .payloadBuilder(svBuilder)
+//                    .paddingAtBuild(true);
+//        }else{
+            etherBuilder
+                    .srcAddr(MacAddress.getByName(srcMAC))
+                    .dstAddr(MacAddress.getByName(dstMAC))
+                    .type(new EtherType((short) 0x88ba, "SV_IEC61850"))
+                    .payloadBuilder(svBuilder)
+                    .paddingAtBuild(true);
+//        }
+
         Packet p = etherBuilder.build();
 
         this.getHandle().sendPacket(p);
@@ -80,7 +91,17 @@ public class SvPacketSender extends EthernetListener{
         }else {
             count = 0;
         }
-        Thread.sleep((long) 0.5);
+//        if ((count > 1111) && (count <3214)){
+//            Thread.sleep((long) 15);
+//        }else{
+            Thread.sleep((long) 0.5);
+//        }
+
+        if (test == 7199){
+            System.out.println(String.format("packets sent: %d", test));
+            stop();
+            Thread.interrupted();
+        }
             
         
     }

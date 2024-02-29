@@ -2,10 +2,15 @@ package org.example;
 
 import java.nio.file.*;
 
+
 public class FileWatcher {
     public static void main(String[] args) throws Exception {
         // Получаем объект WatchService
         WatchService watcher = FileSystems.getDefault().newWatchService();
+
+        boolean isProcessingEvent = false;
+
+        ComtradeParser comParser = new ComtradeParser();
 
         // Регистрируем изменения в директории
         Path dir = Paths.get("E:\\DZ\\11sem\\AI_Enregy\\KP\\pythonProject\\PSCAD_files\\testGrid.gf42\\Rank_00001\\Run_00001");
@@ -36,7 +41,10 @@ public class FileWatcher {
 
                     // Проверяем, что изменение произошло именно в нужном файле
                     if (filename.toString().equals("ABC_W1.dat")) {
-                        System.out.println("Файл был изменен: " + filename);
+                        isProcessingEvent = true;
+                        System.out.println("File was modified: " + filename);
+                        comParser.CreateCSV();
+                        isProcessingEvent = false;
 
 
                     }

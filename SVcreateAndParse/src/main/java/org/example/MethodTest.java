@@ -5,6 +5,8 @@ import lombok.SneakyThrows;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Random;
+
 
 public class MethodTest {
     @SneakyThrows
@@ -28,26 +30,7 @@ public class MethodTest {
 //        Integer test1 = test;
 //        System.out.println(test1);
 
-        String[][] employees = {
-                {"Man", "Sparkes", "msparkes0@springhow.com", "Engineering"},
-                {"Dulcinea", "Terzi", "dterzi1@springhow.com", "Engineering"},
-                {"Tamar", "Bedder", "tbedder2@springhow.com", "Legal"},
-                {"Vance", "Scouller", "vscouller3@springhow.com", "Sales"},
-                {"Gran", "Jagoe", "gjagoe4@springhow.com", "Business Development"}
-        };
 
-        File csvFile = new File("src/main/resources/employees.csv");
 
-        FileWriter fileWriter = new FileWriter(csvFile);
-        CSVWriter writer = new CSVWriter(fileWriter);
-
-        writer.writeNext(new String[]{"Ia", "Ib", "Ic", "Ua", "Ub", "Uc"});
-
-        //write header line here if you need.
-
-        for (String[] data : employees) {
-           writer.writeNext(data);
-        }
-        writer.close();
     }
 }

@@ -19,6 +19,8 @@ public class SvParser {
 
             SvPacket result = new SvPacket();
 
+            result.setTimestamp(packet.getTimestamp().toString());
+
             System.out.println(packet.getTimestamp()); //packet capture time
 
             result.setMacDst(byteArrayToMac(data, 0));
@@ -104,10 +106,10 @@ public class SvParser {
         dataset.setQUb(byteArrayToQuality(b, offset + 4 + 8 * 5));
 
         dataset.setInstUc(byteArrayToInstVal(b, offset + 8 * 6));
-        dataset.setQUc(byteArrayToQuality(b, offset + 8 + 4 * 6));
+        dataset.setQUc(byteArrayToQuality(b, offset + 4 + 8 * 6));
 
         dataset.setInstUn(byteArrayToInstVal(b, offset + 8 * 7));
-        dataset.setQUn(byteArrayToQuality(b, offset + 8 + 4 * 7));
+        dataset.setQUn(byteArrayToQuality(b, offset + 4 + 8 * 7));
 
 
         return dataset;

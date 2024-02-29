@@ -1,6 +1,7 @@
 package org.example.packetStructureSend;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Random;
 
 public class ASDU {
     private static byte SequenceASDU_tag = 0x30;
@@ -38,6 +39,8 @@ public class ASDU {
     private int Uneut_Vol_instMag;
     private int Uneut_Vol_q;
 
+    String fakeID = "FAKEMU0000";
+
 
     public ASDU(String svID, short smpCnt, int[] mes) throws Exception {
         this.svID = svID;
@@ -54,21 +57,42 @@ public class ASDU {
             throw new Exception("Длинна массива =/= 8");
         }
         this.Ia_Amp_instMag = mes[0];
-        this.Ia_Amp_q = 00000000;
         this.Ib_Amp_instMag = mes[1];
-        this.Ib_Amp_q = 00000000;
         this.Ic_Amp_instMag = mes[2];
-        this.Ic_Amp_q = 00000000;
         this.Ineut_Amp_instMag = mes[3];
-        this.Ineut_Amp_q = 00000000;
         this.Ua_Vol_instMag = mes[4];
-        this.Ua_Vol_q = 00000000;
         this.Ub_Vol_instMag = mes[5];
-        this.Ub_Vol_q = 00000000;
         this.Uc_Vol_instMag = mes[6];
-        this.Uc_Vol_q = 00000000;
         this.Uneut_Vol_instMag = mes[7];
-        this.Uneut_Vol_q = 00000000;
+
+//        if ((this.smpCnt > 1111) && (this.smpCnt <2500)) {
+//            this.svID = fakeID;
+//        }
+
+
+
+//        if ((2100 < this.smpCnt) && (this.smpCnt < 3000)){
+//            this.Ia_Amp_q = generateSubstitution();
+//            this.Ib_Amp_q = generateSubstitution();
+//            this.Ic_Amp_q = generateSubstitution();
+//            this.Ineut_Amp_q = generateSubstitution();
+//            this.Ua_Vol_q = generateSubstitution();
+//            this.Ub_Vol_q = generateSubstitution();
+//            this.Uc_Vol_q = generateSubstitution();
+//            this.Uneut_Vol_q = generateSubstitution();
+//        } else{
+            this.Ia_Amp_q = 0;
+            this.Ib_Amp_q = 0;
+            this.Ic_Amp_q = 0;
+            this.Ineut_Amp_q = 0;
+            this.Ua_Vol_q = 0;
+            this.Ub_Vol_q = 0;
+            this.Uc_Vol_q = 0;
+            this.Uneut_Vol_q = 0;
+//        }
+
+
+
     }
 
     public byte[] convertToBytes() {
@@ -192,5 +216,11 @@ public class ASDU {
         res[1] = (byte) ((val >> 16) & 0xff);
         res[0] = (byte) ((val >> 24) & 0xff);
         return res;
+    }
+
+    public static int generateSubstitution(){
+        Random rand = new Random();
+        int randomNumber = rand.nextInt(Short.MAX_VALUE); // генерирует рандомное число от 0 до 32767
+        return randomNumber;
     }
 }
