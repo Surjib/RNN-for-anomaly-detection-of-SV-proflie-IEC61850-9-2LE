@@ -21,7 +21,7 @@
     <param name="Warn" value="0" />
     <param name="Check" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="Lenovo, 1696521355" />
+    <param name="revisor" value="T_T, 1709152728" />
   </paramlist>
   <paramlist name="Libs" />
   <Layers />
@@ -64,7 +64,7 @@
     </Settings>
   </List>
   <definitions>
-    <Definition classid="RowDefn" name="W2_1" group="" url="" version="RowDefn" build="RowDefn" crc="1160396" key="" view="false" date="1696511982" id="540965831">
+    <Definition classid="RowDefn" name="W2_1" group="" url="" version="RowDefn" build="RowDefn" crc="1160396" key="" view="false" date="1709113108" id="540965831">
       <paramlist name="">
         <param name="Description" value="" />
         <param name="type" value="TLine" />
@@ -151,7 +151,7 @@
       </schematic>
       <references />
     </Definition>
-    <Definition classid="RowDefn" name="W11" group="" url="" version="RowDefn" build="RowDefn" crc="83781469" key="" view="false" date="1696511982" id="331028479">
+    <Definition classid="RowDefn" name="W11" group="" url="" version="RowDefn" build="RowDefn" crc="83781469" key="" view="false" date="1709113108" id="331028479">
       <paramlist name="">
         <param name="Description" value="" />
         <param name="type" value="TLine" />
@@ -238,7 +238,7 @@
       </schematic>
       <references />
     </Definition>
-    <Definition classid="StationDefn" name="Station" id="1170518708" group="" url="" version="" build="" crc="54835896" view="false" date="1696511735">
+    <Definition classid="StationDefn" name="Station" id="1170518708" group="" url="" version="" build="" crc="54835896" view="false" date="1708792525">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -265,7 +265,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1124978635" group="" url="" version="" build="" crc="92072839" view="false" date="1696520902">
+    <Definition classid="UserCmpDefn" name="Main" id="1124978635" group="" url="" version="" build="" crc="115715027" view="false" date="1709152119">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -490,7 +490,7 @@
           <paramlist link="-1" name="" crc="64092835">
             <param name="PO" value="20 [MW]" />
             <param name="QO" value="10 [MVAR]" />
-            <param name="VBO" value="127.017 [kV]" />
+            <param name="VBO" value="220 [kV]" />
             <param name="NP" value="2" />
             <param name="NQ" value="2" />
             <param name="KPF" value="0" />
@@ -506,7 +506,7 @@
           <paramlist link="-1" name="" crc="64092835">
             <param name="PO" value="40 [MW]" />
             <param name="QO" value="20 [MVAR]" />
-            <param name="VBO" value="5.7735 [kV]" />
+            <param name="VBO" value="10 [kV]" />
             <param name="NP" value="2" />
             <param name="NQ" value="2" />
             <param name="KPF" value="0" />
@@ -536,7 +536,7 @@
             <param name="Tap" value="0" />
             <param name="View" value="1" />
             <param name="Dtls" value="0" />
-            <param name="V1" value="242.0 [kV]" />
+            <param name="V1" value="220.0 [kV]" />
             <param name="V2" value="10.5 [kV]" />
             <param name="Enab" value="0" />
             <param name="Sat" value="0" />
@@ -2185,7 +2185,7 @@
             <paramlist link="-1" name="">
               <param name="title" value="" />
               <param name="units" value="" />
-              <param name="gridvalue" value="0.200000" />
+              <param name="gridvalue" value="0.050000" />
               <param name="yintervalue" value="0.000000" />
               <param name="grid" value="true" />
               <param name="ticks" value="false" />
@@ -2235,7 +2235,7 @@
             <paramlist link="-1" name="">
               <param name="title" value="" />
               <param name="units" value="" />
-              <param name="gridvalue" value="50.000000" />
+              <param name="gridvalue" value="20.000000" />
               <param name="yintervalue" value="0.000000" />
               <param name="grid" value="true" />
               <param name="ticks" value="false" />
@@ -2260,7 +2260,7 @@
           <paramlist link="-1" name="" crc="26895220">
             <param name="FName" value="ABC_W1" />
             <param name="FFMT" value="2" />
-            <param name="Rstep" value="50" />
+            <param name="Rstep" value="250" />
             <param name="Mfilter" value="0" />
             <param name="FREQ" value="0" />
             <param name="StnN" value="EMTDC_Simulation" />
@@ -2511,7 +2511,7 @@
           <paramlist link="-1" name="" crc="26895220">
             <param name="FName" value="ABC_W2" />
             <param name="FFMT" value="2" />
-            <param name="Rstep" value="50" />
+            <param name="Rstep" value="250" />
             <param name="Mfilter" value="0" />
             <param name="FREQ" value="0" />
             <param name="StnN" value="EMTDC_Simulation" />
@@ -2681,12 +2681,12 @@
     </Definition>
   </definitions>
   <hierarchy>
-    <call link="223020116" name="testGrid:Station" z="-1" view="false" instance="0">
+    <call link="1644157229" name="testGrid:Station" z="-1" view="false" instance="0">
       <call link="193064076" name="testGrid:Main" z="-1" view="true" instance="0">
-        <call link="260744958" name="testGrid:W2_1" z="-1" view="false" instance="1" />
-        <call link="1289825097" name="testGrid:W11" z="-1" view="false" instance="1" />
-        <call link="132577542" name="testGrid:W2_1" z="-1" view="false" instance="0" />
-        <call link="1637075515" name="testGrid:W11" z="-1" view="false" instance="0" />
+        <call link="132577542" name="testGrid:W2_1" z="-1" view="false" instance="1" />
+        <call link="1289825097" name="testGrid:W11" z="-1" view="false" instance="0" />
+        <call link="260744958" name="testGrid:W2_1" z="-1" view="false" instance="0" />
+        <call link="1637075515" name="testGrid:W11" z="-1" view="false" instance="1" />
       </call>
     </call>
   </hierarchy>

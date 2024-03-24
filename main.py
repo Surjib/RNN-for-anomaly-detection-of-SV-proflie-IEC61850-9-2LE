@@ -87,26 +87,47 @@ def prepare_data(data):
     return X_done, y_done, time_done, window_size, num_features
 
 path_normal = "E:/DZ/11sem/AI_Enregy/KP/pythonProject/SVcreateAndParse/src/main/resources/TestRun(ALLDATA_NOFAULT_7200_80perPeriod).csv"
-path_switched = "E:/DZ/11sem/AI_Enregy/KP/pythonProject/SVcreateAndParse/src/main/resources/TestRun(ALLDATA_TIMEMESS_NOFAULT_7200_80perPeriod).csv"
+path_switched = "E:/DZ/11sem/AI_Enregy/KP/pythonProject/SVcreateAndParse/src/main/resources/TestRun(randInt).csv"
+
+
 
 data_clean = generate_dataframe(path_normal, "normal")
 data_messed = generate_dataframe(path_switched, "fault")
 
 print("done")
 
+interval_normal = np.array(data_clean['interval'].values)
+interval_messed = np.array(data_messed['interval'].values)
+
+# Создаем график исходных данных
+plt.plot(np.arange(len(interval_normal)), interval_normal)
+plt.title("Интеравал между получением SV пакетами", fontsize=10)
+plt.ylabel('Интервал, ms', fontsize=8)
+plt.xlabel('№ packet ', fontsize=8)
+plt.show()
+
+plt.plot(np.arange(len(interval_messed)), interval_messed)
+plt.title("Интеравал между получением SV пакетами с подменой", fontsize=10)
+plt.ylabel('Интервал, ms', fontsize=8)
+plt.xlabel('№ packet ', fontsize=8)
+plt.show()
+
 # препподготовка данных
 X_messed, y_messed, time_messed, window_size_messed, num_features_messed = prepare_data(data_messed)
 X_clean, y_clean, time_clean, window_size_clean, num_features_clean = prepare_data(data_clean)
 
 
+
 # определяем архитектуру сети
 model = Sequential()
-model.add(LSTM(50, input_shape=(window_size_messed, num_features_messed), kernel_regularizer=regularizers.L2(0.01), dropout = 0.2, return_sequences=True))
-model.add(LSTM(50, activation='relu'))
+model.add(LSTM(32, input_shape=(window_size_messed, num_features_messed), kernel_regularizer=regularizers.L2(0.01), dropout = 0.2) )
+# model.add(LSTM(50, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
+model.summary()
 
-model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy', 'MeanSquaredError'])
 
+model.summary
 # разбиваем данные на обучающую и тестовую выборки
 train_size = int(0.8 * len(X_messed))
 train_X = X_messed[:train_size]
@@ -114,17 +135,39 @@ train_y = y_messed[:train_size]
 test_X = X_messed[train_size:]
 test_y = y_messed[train_size:]
 
+epochs = 100
+epoch_range = np.arange(1,epochs+1,1)
 # обучаем модель
-model.fit(train_X, train_y, epochs=100, batch_size=32, validation_data=(test_X, test_y))
+history = model.fit(train_X, train_y, epochs=epochs, batch_size=50, validation_data=(test_X, test_y))
 
+accuracy_list = []
+MSE_list = []
+accuracy_list.append(history.history['accuracy'])
+MSE_list.append(history.history['MeanSquaredError'])
+
+
+print("__________ТОЧНОСТЬ_________", accuracy_list)
 
 # оцениваем модель на тестовой выборке
-loss, accuracy = model.evaluate(test_X, test_y)
-print('Точность на тестовой выборке:', accuracy, loss)
+# loss, accuracy = model.evaluate(test_X, test_y)
+# print('Точность на тестовой выборке:', accuracy, loss)
 
 # предсказываем значения для тестовых данных
 y_pred = model.predict(test_X)
 
+#точность
+plt.plot(epoch_range, accuracy_list[0])
+plt.title("Accuracy", fontsize=10)
+plt.ylabel('Accuracy rate', fontsize=8)
+plt.xlabel('epoch', fontsize=8)
+plt.show()
+
+#mse
+plt.plot(epoch_range, MSE_list[0])
+plt.title("MSE", fontsize=10)
+plt.ylabel('rate', fontsize=8)
+plt.xlabel('epoch', fontsize=8)
+plt.show()
 
 
 # Создаем график
@@ -132,6 +175,19 @@ plt.plot(np.arange(len(y_pred)), y_pred)
 plt.title("Проверка модели на тестовой выборке (0-в норме, 1-обнаружена подмена)", fontsize=10)
 plt.ylabel('Предсказанное значение', fontsize=8)
 plt.show()
+
+plt.subplot(1, 2, 1)
+plt.plot(np.arange(len(y_pred)), y_pred)
+plt.title("predict", fontsize=10)
+plt.ylabel('Предсказанное значение', fontsize=8)
+
+plt.subplot(1, 2, 2)
+plt.plot(np.arange(len(test_y)), test_y)
+plt.title("test", fontsize=10)
+plt.ylabel('Предсказанное значение', fontsize=8)
+
+plt.show()
+
 
 
 # X_test_scaled = scaler.transform(test_X[:, :-1].reshape(-1, test_X.shape[-1])).reshape(test_X.shape)
@@ -149,7 +205,7 @@ r2 = r2_score(test_y, y_pred)
 # сравниваем предсказанные значения с фактическими значениями
 accuracy = np.mean(y_pred_binary == test_y)
 
-print('Точность модели на тестовых данных:', accuracy, loss)
+# print('Точность модели на тестовых данных:', accuracy, loss)
 print('Точность:', accuracy)
 print('F1-мера:', f1)
 print('RMSE:', rmse)
@@ -160,14 +216,14 @@ plt.ylabel('Предсказанное значение', fontsize=8)
 plt.show()
 
 train_size = int(0.8 * len(X_messed))
-train_X1 = X_clean[:train_size]
-train_y1 = y_clean[:train_size]
-test_X1 = X_clean[train_size:]
-test_y1 = y_clean[train_size:]
+train_X_new = X_clean[:train_size]
+train_y_new = y_clean[:train_size]
+test_X_new = X_clean[train_size:]
+test_y_new = y_clean[train_size:]
 
 print("s")
 
-y_pred_new = model.predict(test_X1)
+y_pred_new = model.predict(test_X_new)
 
 
 plt.plot(np.arange(len(y_pred_new)), y_pred_new)
@@ -189,7 +245,28 @@ plt.title("Проверка модели на новой выборке (0-в н
 plt.ylabel('Предсказанное значение', fontsize=8)
 plt.show()
 
+# предсказываем значения для тестовых данных
+y_pred_train = model.predict(train_X)
 
+
+
+# # Создаем график
+# plt.plot(np.arange(len(y_pred)), y_pred)
+# plt.title("Проверка модели на тестовой выборке (0-в норме, 1-обнаружена подмена)", fontsize=10)
+# plt.ylabel('Предсказанное значение', fontsize=8)
+# plt.show()
+
+plt.subplot(1, 2, 1)
+plt.plot(np.arange(len(y_pred_train)), y_pred_train)
+plt.title("predict_on_train", fontsize=10)
+plt.ylabel('Предсказанное значение', fontsize=8)
+
+plt.subplot(1, 2, 2)
+plt.plot(np.arange(len(train_y)), train_y)
+plt.title("train", fontsize=10)
+plt.ylabel('Предсказанное значение', fontsize=8)
+
+plt.show()
 
 
 

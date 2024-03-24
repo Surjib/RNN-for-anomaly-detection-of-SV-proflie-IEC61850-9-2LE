@@ -17,7 +17,7 @@ all: targets
 #------------------------------------------------------------------------------
 
 Arch        = windows
-EmtdcDir    = C:\PROGRA~2\PSCAD46\emtdc\gf42
+EmtdcDir    = D:\Program Files (x86)\PSCAD46\emtdc\gf42
 EmtdcInc    = $(EmtdcDir)\inc
 EmtdcBin    = $(EmtdcDir)\$(Arch)
 EmtdcMain   = $(EmtdcBin)\main.obj

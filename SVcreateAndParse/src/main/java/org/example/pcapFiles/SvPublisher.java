@@ -14,8 +14,10 @@ import org.pcap4j.packet.namednumber.EtherType;
 import org.pcap4j.util.MacAddress;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Random;
+
 @Slf4j
-public class SvPacketSender extends EthernetListener{
+public class SvPublisher extends SvSubscriber {
 
     public MV phsAInst = new MV();
     public MV phsBInst = new MV();
@@ -36,8 +38,10 @@ public class SvPacketSender extends EthernetListener{
     String fakeMAC = "12:34:56:78:9a:bc";
     int test = 0;
 
+    Random random = new Random();
 
-    public SvPacketSender() {
+
+    public SvPublisher() {
         this.phsAInst.getInstMag().getF().setValue(0d);
         this.phsBInst.getInstMag().getF().setValue(0d);
         this.phsCInst.getInstMag().getF().setValue(0d);
@@ -92,9 +96,10 @@ public class SvPacketSender extends EthernetListener{
             count = 0;
         }
 //        if ((count > 1111) && (count <3214)){
-//            Thread.sleep((long) 15);
+//            Thread.sleep(random.nextLong(10) + 1);
 //        }else{
-            Thread.sleep((long) 0.5);
+
+            Thread.sleep((long) 0.25);
 //        }
 
         if (test == 7199){
@@ -102,8 +107,8 @@ public class SvPacketSender extends EthernetListener{
             stop();
             Thread.interrupted();
         }
-            
-        
+
+
     }
     /*Метод фундаментально неверно работает - переводит из hex в decimal*/
 

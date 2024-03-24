@@ -3,7 +3,7 @@ package org.example;
 import java.nio.file.*;
 
 
-public class FileWatcher {
+public class MU {
     public static void main(String[] args) throws Exception {
         // Получаем объект WatchService
         WatchService watcher = FileSystems.getDefault().newWatchService();

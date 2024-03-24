@@ -26,9 +26,18 @@ public class MethodTest {
 //        Integer test = 0xd8;
 //        System.out.println(test.byteValue());
 //
-//        Integer test = (int) 0000000;
-//        Integer test1 = test;
-//        System.out.println(test1);
+//       Integer test = (int) 0000000;
+//       Integer test1 = test;
+//       System.out.println(test1);
+
+
+
+                Random random = new Random();
+
+                // генерируем рандомное число типа long от 1 до 10
+                long randomLong =  random.nextLong(10) + 1;
+
+                System.out.println("Random long: " + randomLong);
 
 
 

@@ -21,8 +21,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Slf4j
-public class EthernetListener extends LN {
-
+public class SvSubscriber extends LN {
+    /**
+     * check this.setNickName("VMware Virtual Ethernet Adapter for VMnet8");
+     */
 
     @Getter @Setter
     private String nickName;
@@ -144,7 +146,7 @@ public class EthernetListener extends LN {
     @SneakyThrows
     @Override
     public void process() {
-        log.debug("EtListener method");
+//        log.debug("EtListener method");
 
         File resultCSV = new File("src/main/resources/TestRun.csv");
         FileWriter fileWriter = new FileWriter(resultCSV);

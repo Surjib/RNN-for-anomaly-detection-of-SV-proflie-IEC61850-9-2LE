@@ -21,7 +21,7 @@
     <param name="Warn" value="0" />
     <param name="Check" value="0" />
     <param name="description" value="" />
-    <param name="revisor" value="Lenovo, 1696520902" />
+    <param name="revisor" value="T_T, 1709067971" />
   </paramlist>
   <paramlist name="Libs" />
   <Layers />
@@ -64,7 +64,7 @@
     </Settings>
   </List>
   <definitions>
-    <Definition classid="RowDefn" name="W2_1" group="" url="" version="RowDefn" build="RowDefn" crc="1160396" key="" view="false" date="1696511982" id="540965831">
+    <Definition classid="RowDefn" name="W2_1" group="" url="" version="RowDefn" build="RowDefn" crc="1160396" key="" view="false" date="1709066148" id="540965831">
       <paramlist name="">
         <param name="Description" value="" />
         <param name="type" value="TLine" />
@@ -151,7 +151,7 @@
       </schematic>
       <references />
     </Definition>
-    <Definition classid="RowDefn" name="W11" group="" url="" version="RowDefn" build="RowDefn" crc="83781469" key="" view="false" date="1696511982" id="331028479">
+    <Definition classid="RowDefn" name="W11" group="" url="" version="RowDefn" build="RowDefn" crc="83781469" key="" view="false" date="1709066148" id="331028479">
       <paramlist name="">
         <param name="Description" value="" />
         <param name="type" value="TLine" />
@@ -238,7 +238,7 @@
       </schematic>
       <references />
     </Definition>
-    <Definition classid="StationDefn" name="Station" id="1170518708" group="" url="" version="" build="" crc="54835896" view="false" date="1696511735">
+    <Definition classid="StationDefn" name="Station" id="1170518708" group="" url="" version="" build="" crc="54835896" view="false" date="1708792525">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -265,7 +265,7 @@
         </Wire>
       </schematic>
     </Definition>
-    <Definition classid="UserCmpDefn" name="Main" id="1124978635" group="" url="" version="" build="" crc="86331876" view="false" date="1696520546">
+    <Definition classid="UserCmpDefn" name="Main" id="1124978635" group="" url="" version="" build="" crc="82626448" view="false" date="1709066664">
       <paramlist name="">
         <param name="Description" value="" />
       </paramlist>
@@ -376,7 +376,7 @@
             <param name="Vd" value="" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="1701789850" x="126" y="36" w="38" h="38" z="600" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="1701789850" x="126" y="36" w="38" h="38" z="630" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="I0" />
             <param name="Group" value="" />
@@ -1364,7 +1364,7 @@
             <param name="Name" value="U0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="1122298258" x="180" y="90" w="38" h="38" z="540" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="1122298258" x="180" y="90" w="38" h="38" z="570" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="U0" />
             <param name="Group" value="" />
@@ -1385,7 +1385,7 @@
             <param name="DF" value="0.5 [s]" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:tpflt" id="1401030494" x="306" y="414" w="57" h="73" z="180" orient="0" defn="master:tpflt" link="-1" q="4">
+        <User classid="UserCmp" name="master:tpflt" id="1401030494" x="306" y="414" w="57" h="73" z="270" orient="0" defn="master:tpflt" link="-1" q="4">
           <paramlist link="-1" name="" crc="91443900">
             <param name="Ctype" value="0" />
             <param name="OpCur" value="0" />
@@ -1404,7 +1404,7 @@
             <param name="AG1" value="0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1043631312" x="108" y="144" w="22" h="25" z="490" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1043631312" x="108" y="144" w="22" h="25" z="520" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1413,7 +1413,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1250540756" x="108" y="180" w="22" h="25" z="430" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1250540756" x="108" y="180" w="22" h="25" z="470" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1422,7 +1422,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="343909087" x="108" y="216" w="22" h="25" z="330" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="343909087" x="108" y="216" w="22" h="25" z="390" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1469,7 +1469,7 @@
             <param name="Name" value="U0A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1385854565" x="162" y="216" w="22" h="25" z="310" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1385854565" x="162" y="216" w="22" h="25" z="380" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1478,7 +1478,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1542708137" x="162" y="180" w="22" h="25" z="410" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1542708137" x="162" y="180" w="22" h="25" z="460" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1487,7 +1487,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1144190866" x="162" y="144" w="22" h="25" z="480" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1144190866" x="162" y="144" w="22" h="25" z="510" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1496,7 +1496,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="162065434" x="270" y="144" w="22" h="25" z="120" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="162065434" x="270" y="144" w="22" h="25" z="140" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1505,7 +1505,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="231004256" x="270" y="180" w="22" h="25" z="140" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="231004256" x="270" y="180" w="22" h="25" z="180" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1514,7 +1514,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1895790183" x="270" y="216" w="22" h="25" z="160" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1895790183" x="270" y="216" w="22" h="25" z="220" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1561,7 +1561,7 @@
             <param name="Name" value="I1A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="700418981" x="216" y="216" w="22" h="25" z="150" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="700418981" x="216" y="216" w="22" h="25" z="210" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1570,7 +1570,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1351910174" x="216" y="180" w="22" h="25" z="130" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1351910174" x="216" y="180" w="22" h="25" z="170" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1579,7 +1579,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="49609351" x="216" y="144" w="22" h="25" z="110" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="49609351" x="216" y="144" w="22" h="25" z="130" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1588,7 +1588,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="1667709105" x="288" y="90" w="38" h="38" z="530" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="1667709105" x="288" y="90" w="38" h="38" z="560" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="U1" />
             <param name="Group" value="" />
@@ -1613,7 +1613,7 @@
             <param name="Name" value="I1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="205060717" x="234" y="36" w="38" h="38" z="590" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="205060717" x="234" y="36" w="38" h="38" z="620" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="I1" />
             <param name="Group" value="" />
@@ -1628,7 +1628,7 @@
             <param name="Min" value="-2.0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1575972072" x="378" y="144" w="22" h="25" z="450" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1575972072" x="378" y="144" w="22" h="25" z="480" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1637,7 +1637,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1143185634" x="378" y="180" w="22" h="25" z="350" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1143185634" x="378" y="180" w="22" h="25" z="400" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1646,7 +1646,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1398771187" x="378" y="216" w="22" h="25" z="250" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1398771187" x="378" y="216" w="22" h="25" z="320" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1693,7 +1693,7 @@
             <param name="Name" value="I2A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1031213980" x="324" y="216" w="22" h="25" z="270" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1031213980" x="324" y="216" w="22" h="25" z="340" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1702,7 +1702,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="944190188" x="324" y="180" w="22" h="25" z="370" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="944190188" x="324" y="180" w="22" h="25" z="420" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1711,7 +1711,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="526289687" x="324" y="144" w="22" h="25" z="460" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="526289687" x="324" y="144" w="22" h="25" z="490" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1720,7 +1720,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="45070243" x="396" y="90" w="38" h="38" z="520" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="45070243" x="396" y="90" w="38" h="38" z="550" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="U2" />
             <param name="Group" value="" />
@@ -1745,7 +1745,7 @@
             <param name="Name" value="I2" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="1060829460" x="342" y="36" w="38" h="38" z="580" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="1060829460" x="342" y="36" w="38" h="38" z="610" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="I2" />
             <param name="Group" value="" />
@@ -1760,7 +1760,7 @@
             <param name="Min" value="-2.0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1026349322" x="486" y="144" w="22" h="25" z="420" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1026349322" x="486" y="144" w="22" h="25" z="160" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1769,7 +1769,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="814365798" x="486" y="180" w="22" h="25" z="320" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="814365798" x="486" y="180" w="22" h="25" z="200" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1778,7 +1778,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1495799276" x="486" y="216" w="22" h="25" z="230" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1495799276" x="486" y="216" w="22" h="25" z="240" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1825,7 +1825,7 @@
             <param name="Name" value="I3A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1748198785" x="432" y="216" w="22" h="25" z="240" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1748198785" x="432" y="216" w="22" h="25" z="230" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1834,7 +1834,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1377131195" x="432" y="180" w="22" h="25" z="340" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1377131195" x="432" y="180" w="22" h="25" z="190" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1843,7 +1843,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1457825256" x="432" y="144" w="22" h="25" z="440" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1457825256" x="432" y="144" w="22" h="25" z="150" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1852,7 +1852,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="1156822284" x="504" y="90" w="38" h="38" z="510" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="1156822284" x="504" y="90" w="38" h="38" z="540" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="U3" />
             <param name="Group" value="" />
@@ -1877,7 +1877,7 @@
             <param name="Name" value="I3" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="830433709" x="450" y="36" w="38" h="38" z="570" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="830433709" x="450" y="36" w="38" h="38" z="600" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="I3" />
             <param name="Group" value="" />
@@ -1892,7 +1892,7 @@
             <param name="Min" value="-2.0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1374864592" x="612" y="144" w="22" h="25" z="390" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1374864592" x="612" y="144" w="22" h="25" z="440" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1901,7 +1901,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1316256581" x="612" y="180" w="22" h="25" z="290" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1316256581" x="612" y="180" w="22" h="25" z="360" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1910,7 +1910,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="2134032256" x="612" y="216" w="22" h="25" z="210" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="2134032256" x="612" y="216" w="22" h="25" z="300" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1957,7 +1957,7 @@
             <param name="Name" value="I4A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1278968705" x="558" y="216" w="22" h="25" z="220" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1278968705" x="558" y="216" w="22" h="25" z="310" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -1966,7 +1966,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="318455001" x="558" y="180" w="22" h="25" z="300" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="318455001" x="558" y="180" w="22" h="25" z="370" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -1975,7 +1975,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1642860362" x="558" y="144" w="22" h="25" z="400" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1642860362" x="558" y="144" w="22" h="25" z="450" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -1984,7 +1984,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="2144164238" x="630" y="90" w="38" h="38" z="500" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="2144164238" x="630" y="90" w="38" h="38" z="530" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="U4" />
             <param name="Group" value="" />
@@ -2009,7 +2009,7 @@
             <param name="Name" value="I4" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="340692934" x="576" y="36" w="38" h="38" z="560" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="340692934" x="576" y="36" w="38" h="38" z="590" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="I4" />
             <param name="Group" value="" />
@@ -2024,7 +2024,7 @@
             <param name="Min" value="-2.0" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="334207213" x="720" y="144" w="22" h="25" z="360" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="334207213" x="720" y="144" w="22" h="25" z="410" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -2033,7 +2033,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="2066595755" x="720" y="180" w="22" h="25" z="260" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="2066595755" x="720" y="180" w="22" h="25" z="330" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -2042,7 +2042,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="1591307862" x="720" y="216" w="22" h="25" z="190" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="1591307862" x="720" y="216" w="22" h="25" z="280" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -2089,7 +2089,7 @@
             <param name="Name" value="I5A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="653301039" x="666" y="216" w="22" h="25" z="200" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="653301039" x="666" y="216" w="22" h="25" z="290" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="3" />
             <param name="Dim" value="1" />
@@ -2098,7 +2098,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="862289251" x="666" y="180" w="22" h="25" z="280" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="862289251" x="666" y="180" w="22" h="25" z="350" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="2" />
             <param name="Dim" value="1" />
@@ -2107,7 +2107,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datatap" id="490813669" x="666" y="144" w="22" h="25" z="380" orient="1" defn="master:datatap" link="-1" q="4">
+        <User classid="UserCmp" name="master:datatap" id="490813669" x="666" y="144" w="22" h="25" z="430" orient="1" defn="master:datatap" link="-1" q="4">
           <paramlist link="-1" name="" crc="9058255">
             <param name="Index" value="1" />
             <param name="Dim" value="1" />
@@ -2116,7 +2116,7 @@
             <param name="Disp" value="1" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="1707322921" x="738" y="90" w="38" h="38" z="470" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="1707322921" x="738" y="90" w="38" h="38" z="500" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="U5" />
             <param name="Group" value="" />
@@ -2141,7 +2141,7 @@
             <param name="Name" value="I5" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:pgb" id="515047773" x="684" y="36" w="38" h="38" z="550" orient="0" defn="master:pgb" link="-1" q="4">
+        <User classid="UserCmp" name="master:pgb" id="515047773" x="684" y="36" w="38" h="38" z="580" orient="0" defn="master:pgb" link="-1" q="4">
           <paramlist link="-1" name="" crc="25850285">
             <param name="Name" value="I5" />
             <param name="Group" value="" />
@@ -2185,7 +2185,7 @@
             <paramlist link="-1" name="">
               <param name="title" value="" />
               <param name="units" value="" />
-              <param name="gridvalue" value="0.200000" />
+              <param name="gridvalue" value="0.050000" />
               <param name="yintervalue" value="0.000000" />
               <param name="grid" value="true" />
               <param name="ticks" value="false" />
@@ -2256,11 +2256,11 @@
             <Curve classid="Curve" id="1873590042" name="U1" link="1667709105" color="0" bold="0" show="-1" mode="0" />
           </Graph>
         </Frame>
-        <User classid="UserCmp" name="master:recorder2_0" id="2029606129" x="306" y="810" w="245" h="130" z="170" orient="0" defn="master:recorder2_0" link="-1" q="4">
+        <User classid="UserCmp" name="master:recorder2_0" id="2029606129" x="306" y="810" w="245" h="130" z="260" orient="0" defn="master:recorder2_0" link="-1" q="4">
           <paramlist link="-1" name="" crc="26895220">
             <param name="FName" value="ABC_W1" />
             <param name="FFMT" value="2" />
-            <param name="Rstep" value="50" />
+            <param name="Rstep" value="250" />
             <param name="Mfilter" value="0" />
             <param name="FREQ" value="0" />
             <param name="StnN" value="EMTDC_Simulation" />
@@ -2465,53 +2465,53 @@
             <param name="Name" value="U1C" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datalabel" id="733986634" x="792" y="738" w="24" h="21" z="-1" orient="0" defn="master:datalabel" link="-1" q="4">
+        <User classid="UserCmp" name="master:datalabel" id="733986634" x="792" y="738" w="24" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
           <paramlist link="-1" name="" crc="98359112">
             <param name="Name" value="U3C" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datalabel" id="2091096833" x="756" y="738" w="24" h="21" z="-1" orient="0" defn="master:datalabel" link="-1" q="4">
+        <User classid="UserCmp" name="master:datalabel" id="2091096833" x="756" y="738" w="24" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
           <paramlist link="-1" name="" crc="98359112">
             <param name="Name" value="U3B" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datalabel" id="2044615797" x="720" y="738" w="24" h="21" z="-1" orient="0" defn="master:datalabel" link="-1" q="4">
+        <User classid="UserCmp" name="master:datalabel" id="2044615797" x="720" y="738" w="24" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
           <paramlist link="-1" name="" crc="98359112">
             <param name="Name" value="U3A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datalabel" id="117692543" x="684" y="738" w="24" h="21" z="-1" orient="0" defn="master:datalabel" link="-1" q="4">
+        <User classid="UserCmp" name="master:datalabel" id="117692543" x="684" y="738" w="24" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
           <paramlist link="-1" name="" crc="98359112">
             <param name="Name" value="I3C" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datalabel" id="1108289286" x="648" y="738" w="24" h="21" z="-1" orient="0" defn="master:datalabel" link="-1" q="4">
+        <User classid="UserCmp" name="master:datalabel" id="1108289286" x="648" y="738" w="24" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
           <paramlist link="-1" name="" crc="98359112">
             <param name="Name" value="I3B" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:datalabel" id="83432607" x="612" y="738" w="24" h="21" z="-1" orient="0" defn="master:datalabel" link="-1" q="4">
+        <User classid="UserCmp" name="master:datalabel" id="83432607" x="612" y="738" w="24" h="21" z="1" orient="0" defn="master:datalabel" link="-1" q="4">
           <paramlist link="-1" name="" crc="98359112">
             <param name="Name" value="I3A" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="1343204977" x="540" y="846" w="69" h="19" z="-1" orient="0" defn="master:const" link="-1" q="4">
+        <User classid="UserCmp" name="master:const" id="1343204977" x="540" y="846" w="69" h="19" z="120" orient="0" defn="master:const" link="-1" q="4">
           <paramlist link="-1" name="" crc="8647988">
             <param name="Name" value="" />
             <param name="Value" value="2" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:const" id="791478655" x="540" y="810" w="69" h="19" z="-1" orient="0" defn="master:const" link="-1" q="4">
+        <User classid="UserCmp" name="master:const" id="791478655" x="540" y="810" w="69" h="19" z="110" orient="0" defn="master:const" link="-1" q="4">
           <paramlist link="-1" name="" crc="8647988">
             <param name="Name" value="" />
             <param name="Value" value="0.2" />
           </paramlist>
         </User>
-        <User classid="UserCmp" name="master:recorder2_0" id="1831375947" x="684" y="810" w="245" h="130" z="-1" orient="0" defn="master:recorder2_0" link="-1" q="4">
+        <User classid="UserCmp" name="master:recorder2_0" id="1831375947" x="684" y="810" w="245" h="130" z="250" orient="0" defn="master:recorder2_0" link="-1" q="4">
           <paramlist link="-1" name="" crc="26895220">
             <param name="FName" value="ABC_W2" />
             <param name="FFMT" value="2" />
-            <param name="Rstep" value="50" />
+            <param name="Rstep" value="250" />
             <param name="Mfilter" value="0" />
             <param name="FREQ" value="0" />
             <param name="StnN" value="EMTDC_Simulation" />
@@ -2681,12 +2681,12 @@
     </Definition>
   </definitions>
   <hierarchy>
-    <call link="223020116" name="testGrid:Station" z="-1" view="false" instance="0">
+    <call link="1162537757" name="testGrid:Station" z="-1" view="false" instance="0">
       <call link="193064076" name="testGrid:Main" z="-1" view="true" instance="0">
-        <call link="1637075515" name="testGrid:W11" z="-1" view="false" instance="0" />
-        <call link="260744958" name="testGrid:W2_1" z="-1" view="false" instance="1" />
-        <call link="1289825097" name="testGrid:W11" z="-1" view="false" instance="1" />
-        <call link="132577542" name="testGrid:W2_1" z="-1" view="false" instance="0" />
+        <call link="1289825097" name="testGrid:W11" z="-1" view="false" instance="0" />
+        <call link="260744958" name="testGrid:W2_1" z="-1" view="false" instance="0" />
+        <call link="1637075515" name="testGrid:W11" z="-1" view="false" instance="1" />
+        <call link="132577542" name="testGrid:W2_1" z="-1" view="false" instance="1" />
       </call>
     </call>
   </hierarchy>
