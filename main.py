@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_sco
 
 
 
-# print(file_name, path)
+
 def generate_dataframe(path_csv, name):
 
     print('\nForming dataframe [time, interval]')
@@ -32,7 +32,6 @@ def generate_dataframe(path_csv, name):
     time['interval'] = time['interval'].dt.total_seconds() * 1000
 
     print(time)
-    time.to_csv(name, index=False)
 
     return time
 
@@ -146,11 +145,7 @@ accuracy_list.append(history.history['accuracy'])
 MSE_list.append(history.history['MeanSquaredError'])
 
 
-print("__________ТОЧНОСТЬ_________", accuracy_list)
-
-# оцениваем модель на тестовой выборке
-# loss, accuracy = model.evaluate(test_X, test_y)
-# print('Точность на тестовой выборке:', accuracy, loss)
+# print("__________ТОЧНОСТЬ_________", accuracy_list)
 
 # предсказываем значения для тестовых данных
 y_pred = model.predict(test_X)
@@ -189,9 +184,6 @@ plt.ylabel('Предсказанное значение', fontsize=8)
 plt.show()
 
 
-
-# X_test_scaled = scaler.transform(test_X[:, :-1].reshape(-1, test_X.shape[-1])).reshape(test_X.shape)
-# y_pred = model.predict(X_test_scaled)
 y_pred_binary = [1 if y >= 0.5 else 0 for y in y_pred]
 
 # вычисляем метрики качества
