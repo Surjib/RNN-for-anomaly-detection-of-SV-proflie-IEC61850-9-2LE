@@ -101,6 +101,7 @@ public class LCOM extends LN {
                 list.add(line);
                 line = br.readLine();
             }
+            br.close();
 
         } catch (FileNotFoundException e) {
             System.err.println("Неверно указан путь");;

@@ -8,14 +8,32 @@ from sklearn.preprocessing import StandardScaler, MinMaxScaler
 from sklearn.metrics import accuracy_score, f1_score, mean_squared_error, r2_score, roc_auc_score
 
 
-
-
 def generate_dataframe(path_csv, name):
+    """
+    Generate dataframe from csv file.
 
+    Parameters
+    ----------
+    path_csv : str
+        Path to csv file.
+    name : str
+        Name of dataframe.
+
+    Returns
+    -------
+    time : pd.DataFrame
+        DataFrame with columns 'time' and 'interval'.
+
+    Notes
+    -----
+    The dataframe is created from a csv file with columns 'time' and 'interval'.
+    The 'time' column is converted to datetime format and then the 'interval' column is calculated
+    as the difference between consecutive 'time' values. The first row of 'interval' is set to
+    the second row value.
+    """
     print('\nForming dataframe [time, interval]')
-    data = pd.read_csv(path_csv, encoding ="ISO-8859-1")
+    data = pd.read_csv(path_csv, encoding="ISO-8859-1")
     print(data.info())
-
 
     data['time'] = pd.to_datetime(data['time'])
 
@@ -54,7 +72,7 @@ def prepare_data(data):
 
     # определяем метки для каждого окна данных
     data['label'] = np.where((data['mean_interval'] <= mean_threshold),
-                                   0, 1)
+                             0, 1)
 
     # print(data.head())
 
@@ -85,10 +103,10 @@ def prepare_data(data):
     time_done = np.array(time)
     return X_done, y_done, time_done, window_size, num_features
 
-path_normal = "E:/DZ/11sem/AI_Enregy/KP/pythonProject/SVcreateAndParse/src/main/resources/TestRun(ALLDATA_NOFAULT_7200_80perPeriod).csv"
+
+path_normal = ("E:/DZ/11sem/AI_Enregy/KP/pythonProject/SVcreateAndParse/src/main/resources/TestRun("
+               "ALLDATA_NOFAULT_7200_80perPeriod).csv")
 path_switched = "E:/DZ/11sem/AI_Enregy/KP/pythonProject/SVcreateAndParse/src/main/resources/TestRun(randInt).csv"
-
-
 
 data_clean = generate_dataframe(path_normal, "normal")
 data_messed = generate_dataframe(path_switched, "fault")
@@ -115,11 +133,10 @@ plt.show()
 X_messed, y_messed, time_messed, window_size_messed, num_features_messed = prepare_data(data_messed)
 X_clean, y_clean, time_clean, window_size_clean, num_features_clean = prepare_data(data_clean)
 
-
-
 # определяем архитектуру сети
 model = Sequential()
-model.add(LSTM(32, input_shape=(window_size_messed, num_features_messed), kernel_regularizer=regularizers.L2(0.01), dropout = 0.2) )
+model.add(LSTM(32, input_shape=(window_size_messed, num_features_messed), kernel_regularizer=regularizers.L2(0.01),
+               dropout=0.2))
 # model.add(LSTM(50, activation='relu'))
 model.add(Dense(1, activation='sigmoid'))
 model.summary()
@@ -135,7 +152,7 @@ test_X = X_messed[train_size:]
 test_y = y_messed[train_size:]
 
 epochs = 100
-epoch_range = np.arange(1,epochs+1,1)
+epoch_range = np.arange(1, epochs + 1, 1)
 # обучаем модель
 history = model.fit(train_X, train_y, epochs=epochs, batch_size=50, validation_data=(test_X, test_y))
 
@@ -144,26 +161,24 @@ MSE_list = []
 accuracy_list.append(history.history['accuracy'])
 MSE_list.append(history.history['MeanSquaredError'])
 
-
 # print("__________ТОЧНОСТЬ_________", accuracy_list)
 
 # предсказываем значения для тестовых данных
 y_pred = model.predict(test_X)
 
-#точность
+# точность
 plt.plot(epoch_range, accuracy_list[0])
 plt.title("Accuracy", fontsize=10)
 plt.ylabel('Accuracy rate', fontsize=8)
 plt.xlabel('epoch', fontsize=8)
 plt.show()
 
-#mse
+# mse
 plt.plot(epoch_range, MSE_list[0])
 plt.title("MSE", fontsize=10)
 plt.ylabel('rate', fontsize=8)
 plt.xlabel('epoch', fontsize=8)
 plt.show()
-
 
 # Создаем график
 plt.plot(np.arange(len(y_pred)), y_pred)
@@ -182,7 +197,6 @@ plt.title("test", fontsize=10)
 plt.ylabel('Предсказанное значение', fontsize=8)
 
 plt.show()
-
 
 y_pred_binary = [1 if y >= 0.5 else 0 for y in y_pred]
 
@@ -217,14 +231,10 @@ print("s")
 
 y_pred_new = model.predict(test_X_new)
 
-
 plt.plot(np.arange(len(y_pred_new)), y_pred_new)
 plt.title("Проверка модели на новой выборке (0-в норме, 1-обнаружена подмена)", fontsize=10)
 plt.ylabel('Предсказанное значение', fontsize=8)
 plt.show()
-
-
-
 
 # X_test_scaled = scaler.transform(test_X[:, :-1].reshape(-1, test_X.shape[-1])).reshape(test_X.shape)
 # y_pred = model.predict(X_test_scaled)
@@ -239,8 +249,6 @@ plt.show()
 
 # предсказываем значения для тестовых данных
 y_pred_train = model.predict(train_X)
-
-
 
 # # Создаем график
 # plt.plot(np.arange(len(y_pred)), y_pred)
@@ -259,7 +267,3 @@ plt.title("train", fontsize=10)
 plt.ylabel('Предсказанное значение', fontsize=8)
 
 plt.show()
-
-
-
-
